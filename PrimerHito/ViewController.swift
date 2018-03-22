@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func accionBotonLogear(){
+        TxtConsola?.text="hola"
+        //txtConsola?.txt=String(format: "Hola %@, con contraseña %@", (txtfusuario?.text)!, (txtfPass?.text)!);
+    }
 
 }
 
