@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var txtUser:UITextField?
+    @IBOutlet var txtPass:UITextField?
+    @IBOutlet var butLogin:UIButton?
+    @IBOutlet var butRegis:UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +24,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func clickLogin(){
+        print("hey que tal ??? " + (txtUser?.text)! + " con contraseña " + (txtPass?.text)!)
+        //en caso de que haya una 'y' se hará la transicion
+        self.performSegue(withIdentifier: "trLogin", sender: self)
+        
+    }
+    
 
 }
 
