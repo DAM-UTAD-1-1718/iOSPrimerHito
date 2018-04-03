@@ -12,6 +12,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
+    
+  //  @IBOutlet var txtNewUser:UITextField?
+  //  @IBOutlet var txtNewPass:UITextField?
+  //  @IBOutlet var txtNewPass2:UITextField?
+    
+    @IBOutlet var txtNotaInicio:UITextView?
     @IBOutlet var butLogin:UIButton?
     @IBOutlet var butRegis:UIButton?
 
@@ -28,10 +34,11 @@ class ViewController: UIViewController {
     @IBAction func clickLogin(){
         print("hey que tal ??? " + (txtUser?.text)! + " con contraseña " + (txtPass?.text)!)
         //en caso de que haya una 'y' se hará la transicion
-        self.performSegue(withIdentifier: "trLogin", sender: self)
-        
+        if txtUser?.text=="yo" && txtPass?.text=="contra" {
+            self.performSegue(withIdentifier: "trLogin", sender: self)
+        }else{
+            self.txtNotaInicio?.text=String(format:  "ERROR de autentificacion")
+        }
     }
-    
-
 }
 
